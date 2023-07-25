@@ -1,5 +1,6 @@
 ﻿using Server.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
+using Server.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,5 +13,8 @@ builder.Services.AddDbContext<GameContext>(opt =>
 });
 
 var app = builder.Build();
+
+app.MapHub<GameHub>();
+app.MapHub<HoopHub>();
 
 app.Run();
