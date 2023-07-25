@@ -14,7 +14,7 @@ builder.Services.AddDbContext<GameContext>(opt =>
 
 var app = builder.Build();
 
-app.MapHub<GameHub>();
-app.MapHub<HoopHub>();
+app.MapHub<GameHub>("game");
+app.MapHub<HoopHub>("hoop");
 
 app.Run();
